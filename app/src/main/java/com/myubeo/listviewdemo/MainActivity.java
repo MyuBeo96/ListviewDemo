@@ -1,5 +1,6 @@
 package com.myubeo.listviewdemo;
 
+import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -57,8 +58,12 @@ public class MainActivity extends AppCompatActivity {
 
                 DataModel dataModel= dataModels.get(position);
 
-                Snackbar.make(view, dataModel.getName()+"\n"+dataModel.getType()+" API: "+dataModel.getVersion_number(), Snackbar.LENGTH_LONG)
-                        .setAction("No action", null).show();
+                Intent intent = new Intent(MainActivity.this, DitemActivity.class);
+                startActivity(intent);
+
+
+//                Snackbar.make(view, dataModel.getName()+"\n"+dataModel.getType()+" API: "+dataModel.getVersion_number(), Snackbar.LENGTH_LONG)
+//                        .setAction("No action", null).show();
             }
         });
     }
